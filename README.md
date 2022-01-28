@@ -37,7 +37,11 @@ xvfb-run python3 firstAgent.py
 
 ## Official Doc and Reference
 
-MineRL official documentation: https://minerl.readthedocs.io/en/latest/
+MineRL official documentation: 
+
+https://minerl.readthedocs.io/en/latest/
+
+https://github.com/minerllabs/minerl
 
 
 
