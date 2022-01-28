@@ -30,7 +30,7 @@ sudo apt install xvfb
 
 ## Run sample code
 
-Run the sample 
+Run the sample code to test the installation.
 ```
 xvfb-run python3 firstAgent.py
 ```
