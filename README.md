@@ -32,13 +32,13 @@ sudo apt install xvfb
 
 Run the sample 
 ```
-xvfb-run python3 <your_script.py>
+xvfb-run python3 firstAgent.py
 ```
 
-## Official Doc
+## Official Doc and Reference
 
+MineRL official documentation: https://minerl.readthedocs.io/en/latest/
 
-## Main Reference
 
 
 
