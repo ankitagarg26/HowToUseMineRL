@@ -51,6 +51,17 @@ xvfb-run python3 firstAgent.py
 
 **kmeans.py**: shows how kmeans can be used to quantize the human demonstrations and give agent n discrete actions representative of actions taken by humans when solving the environment.
 
+## Use MineRL on the server ##
+On the server, go to path **/mnt/ShareFolder/MineRL** and activate the environment using below command:
+```
+ conda activate minerl
+```
+You can now use the minerl package in your code.
+
+MineRL sample code and datasets can be found in the directories listed below: 
+1. Sample codes: ***/mnt/ShareFolder/MineRL/HowToUseMineRL***
+2. MineRL dataset: ***/mnt/ShareFolder/MineRL/data***
+
 ## Official Doc and Reference
 
 MineRL official documentation: 
