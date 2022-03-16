@@ -1,5 +1,5 @@
 ### Creating Your First Agent ###
-Follow the below steps to create your agent:
+
 1. Import the necessary packages.
     ```
     import gym
