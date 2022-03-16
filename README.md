@@ -45,11 +45,7 @@ xvfb-run python3 firstAgent.py
 ```
 
 ## Start with MineRL ##
-**random_agent.py**: shows the code for creating an agent that takes random actions.
-
-**no_op_actions.py**: shows the code for creating an agent that take the noop action with a few modifications targeted towards the goal.
-
-**kmeans.py**: shows how kmeans can be used to quantize the human demonstrations and give agent n discrete actions representative of actions taken by humans when solving the environment.
+To create your first agent, follow the instructions [here](https://github.com/ankitagarg26/HowToUseMineRL/blob/main/CreateAgent.md)
 
 ## Use MineRL on the server ##
 On the server, go to path **/mnt/ShareFolder/MineRL** and activate the environment using below command:
