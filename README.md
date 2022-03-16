@@ -41,7 +41,7 @@ Before running above command make sure conda is installed on the system. If not,
 
 Run the sample code to test the installation.
 ```
-xvfb-run python3 firstAgent.py
+xvfb-run python3 random_agent.py
 ```
 
 ## Start with MineRL ##
