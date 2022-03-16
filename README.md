@@ -45,7 +45,7 @@ xvfb-run python3 random_agent.py
 ```
 
 ## Start with MineRL ##
-To create your first agent, follow the instructions [here](https://github.com/ankitagarg26/HowToUseMineRL/blob/main/CreateAgent.md)
+To create your first agent, follow the instructions [here](https://github.com/ankitagarg26/HowToUseMineRL/blob/main/CreateYourFirstAgent.md)
 
 ## Use MineRL on the server ##
 On the server, go to path **/mnt/ShareFolder/MineRL** and activate the environment using below command:
