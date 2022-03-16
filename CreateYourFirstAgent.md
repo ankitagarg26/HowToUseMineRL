@@ -31,6 +31,8 @@
  
  ### Other Samples ###
  
-[no_op_actions.py](https://github.com/ankitagarg26/HowToUseMineRL/blob/main/no_op_actions.py): shows the code for creating an agent that take the noop action with a few modifications targeted towards the goal.
+[no_op_actions.py](https://github.com/ankitagarg26/HowToUseMineRL/blob/main/no_op_actions.py): 
+Shows the code for creating an agent that take the noop action with a few modifications targeted towards the goal.
 
-[kmeans.py](https://github.com/ankitagarg26/HowToUseMineRL/blob/main/kmeans.py): shows how kmeans can be used to quantize the human demonstrations and give agent n discrete actions representative of actions taken by humans when solving the environment.
+[kmeans.py](https://github.com/ankitagarg26/HowToUseMineRL/blob/main/kmeans.py): 
+Shows how kmeans can be used to quantize the human demonstrations and give agent n discrete actions representative of actions taken by humans when solving the environment.
