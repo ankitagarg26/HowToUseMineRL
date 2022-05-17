@@ -1,0 +1,2 @@
+2022-04-21 22:19:38 WorkStation process_watcher[28635] INFO Process watcher started between parent 28489 and child 28580 
+2022-04-21 22:46:05 WorkStation process_watcher[28635] INFO Child is not running anymore, launcher can terminate.

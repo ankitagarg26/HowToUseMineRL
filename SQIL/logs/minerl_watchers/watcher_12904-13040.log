@@ -1,0 +1,2 @@
+2022-04-26 16:08:12 WorkStation process_watcher[13114] INFO Process watcher started between parent 12904 and child 13040 
+2022-04-27 12:12:14 WorkStation process_watcher[13114] INFO Parent is not running, hence we need terminate the child.

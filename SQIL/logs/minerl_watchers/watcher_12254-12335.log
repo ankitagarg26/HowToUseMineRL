@@ -1,0 +1,10 @@
+2022-04-27 12:13:32 WorkStation process_watcher[12407] INFO Process watcher started between parent 12254 and child 12335 
+2022-05-10 06:36:34 WorkStation process_watcher[12407] INFO Parent is not running, hence we need terminate the child.
+2022-05-10 06:36:38 WorkStation process_watcher[12407] INFO About to reap process tree of 12335:launchClient.sh:/bin/bash i sleeping, owner 1, printing process tree status in termination order:
+2022-05-10 06:36:38 WorkStation process_watcher[12407] INFO 	-12339:java:/usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java i sleeping, owner 12335
+2022-05-10 06:36:38 WorkStation process_watcher[12407] INFO 	-12335:launchClient.sh:/bin/bash i sleeping, owner 1
+2022-05-10 06:36:38 WorkStation process_watcher[12407] INFO Trying to SIGTERM 12339:java:/usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java i sleeping, owner 12335
+2022-05-10 06:36:43 WorkStation process_watcher[12407] INFO Process 12339 survived SIGTERM; trying SIGKILL on 12339:java:/usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java i sleeping, owner 12335
+2022-05-10 06:36:43 WorkStation process_watcher[12407] INFO Process psutil.Process(pid=12339, name='java', status='terminated', started='2022-04-27 12:13:31') terminated with exit code None
+2022-05-10 06:36:43 WorkStation process_watcher[12407] INFO Trying to SIGTERM 12335:launchClient.sh:/bin/bash i disk-sleep, owner 1
+2022-05-10 06:36:43 WorkStation process_watcher[12407] INFO Process psutil.Process(pid=12335, name='launchClient.sh', status='terminated', started='2022-04-27 12:13:31') terminated with exit code None
