@@ -1,8 +1,0 @@
-2022-02-20 17:19:26 WorkStation process_watcher[14901] INFO Process watcher started between parent 14384 and child 14831 
-2022-02-20 17:19:32 WorkStation process_watcher[14901] INFO Parent is not running, hence we need terminate the child.
-2022-02-20 17:19:32 WorkStation process_watcher[14901] INFO About to reap process tree of 14831:launchClient.sh:/bin/bash i sleeping, owner 1, printing process tree status in termination order:
-2022-02-20 17:19:32 WorkStation process_watcher[14901] INFO 	-14835:java:/usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java i sleeping, owner 14831
-2022-02-20 17:19:32 WorkStation process_watcher[14901] INFO 	-14831:launchClient.sh:/bin/bash i sleeping, owner 1
-2022-02-20 17:19:32 WorkStation process_watcher[14901] INFO Trying to SIGTERM 14835:java:/usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java i sleeping, owner 14831
-2022-02-20 17:19:32 WorkStation process_watcher[14901] INFO Process psutil.Process(pid=14835, name='java', status='terminated', started='17:19:25') terminated with exit code None
-2022-02-20 17:19:32 WorkStation process_watcher[14901] INFO Process psutil.Process(pid=14831, name='launchClient.sh', status='terminated', started='17:19:25') does not exist or is zombie.

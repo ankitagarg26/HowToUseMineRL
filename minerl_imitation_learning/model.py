@@ -36,7 +36,7 @@ class Network(nn.Module):
 
     def forward(self, x, vec):
         x = self.cnn(x)
-        x = x.reshape(-1, self.conv_output_size)
+        x = x.view(-1, self.conv_output_size)
         x = self.fc_im(x)
         vec = self.fc_vec(vec)
 

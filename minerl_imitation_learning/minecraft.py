@@ -1,61 +1,7 @@
 from gym.core import Wrapper
-import gym.spaces as spaces
+import minerl.env.spaces as spaces
 import numpy as np
-import gym
 from copy import deepcopy
-
-class Enum(gym.spaces.Discrete):
-    """
-    An enum space. It can either be the enum string or a integer.
-    """
-    def __init__(self, *values: str):
-        """Initializes the Enum space with a set of possible 
-        values that the enum can take.
-
-        Usage:
-        ```
-        x = Enum('none', 'type1', 'type2')
-        x['none'] # 0
-        x['type1'] # 1
-
-        Args:
-            values (str):  An order argument list of values the enum can take.
-        """
-        super().__init__(len(values))
-        self.values = values
-
-    def sample(self) -> int:
-        """Samples a random index for one of the enum types.
-
-        ```
-        x.sample() # A random nubmer in the half-open discrete interval [0, len(x.values)) 
-        ````    
-        
-        Returns:
-            int:  A random index for one of the enum types.
-        """
-        return super().sample()
-
-    def no_op(self) -> int:
-        return 0
-
-    def __getitem__(self, action):
-        try:
-            if isinstance(action, str):
-                return self.values.index(action)
-            elif action < super().n:
-                return action
-        except ValueError:
-            raise ValueError("\"{}\" not valid ENUM value in values {}".format(action, self.values))
-        finally:
-            # TODO support more action formats through np.all < super().n
-            raise ValueError("minerl.spaces.Enum: action must be of type str or int")
-        
-    def __str__(self):
-        return "Enum(" + ','.join(self.values) +")"
-
-    def __len__(self):
-        return len(self.values)
 
 
 class DummyMinecraft:
@@ -91,16 +37,16 @@ class DummyMinecraft:
             'attack': spaces.Discrete(2),
             'back': spaces.Discrete(2),
             'camera': spaces.Box(np.full([2], -1), np.full([2], 1)),
-            'craft': Enum('none', 'torch', 'stick', 'planks', 'crafting_table'),
-            'equip': Enum('none', 'air', 'wooden_axe', 'wooden_pickaxe', 'stone_axe',
+            'craft': spaces.Enum('none', 'torch', 'stick', 'planks', 'crafting_table'),
+            'equip': spaces.Enum('none', 'air', 'wooden_axe', 'wooden_pickaxe', 'stone_axe',
                                  'stone_pickaxe', 'iron_axe', 'iron_pickaxe'),
             'forward': spaces.Discrete(2),
             'jump': spaces.Discrete(2),
             'left': spaces.Discrete(2),
-            'nearbyCraft': Enum('none', 'wooden_axe', 'wooden_pickaxe', 'stone_axe',
+            'nearbyCraft': spaces.Enum('none', 'wooden_axe', 'wooden_pickaxe', 'stone_axe',
                                        'stone_pickaxe', 'iron_axe', 'iron_pickaxe', 'furnace'),
-            'nearbySmelt': Enum('none', 'iron_ingot', 'coal'),
-            'place': Enum('none', 'dirt', 'stone', 'cobblestone', 'crafting_table', 'furnace', 'torch'),
+            'nearbySmelt': spaces.Enum('none', 'iron_ingot', 'coal'),
+            'place': spaces.Enum('none', 'dirt', 'stone', 'cobblestone', 'crafting_table', 'furnace', 'torch'),
             'right': spaces.Discrete(2),
             'sneak': spaces.Discrete(2),
             'sprint': spaces.Discrete(2)}
@@ -110,7 +56,7 @@ class DummyMinecraft:
                 'mainhand': {
                     'damage': spaces.Box(np.full([2], -1), np.full([2], 1), dtype=np.int64),
                     'maxDamage': spaces.Box(np.full([2], -1), np.full([2], 1), dtype=np.int64),
-                    'type': Enum('none', 'air', 'wooden_axe', 'wooden_pickaxe', 'stone_axe', 'stone_pickaxe',
+                    'type': spaces.Enum('none', 'air', 'wooden_axe', 'wooden_pickaxe', 'stone_axe', 'stone_pickaxe',
                                         'iron_axe', 'iron_pickaxe', 'other')}},
             'inventory': {
                 'coal': spaces.Box(np.full([1], -1), np.full([1], 1), dtype=np.int64),
@@ -193,7 +139,6 @@ class Env(Wrapper):
         assert not self.done
 
         action = self.action_manager.get_action(action)
-        action  = self.action_manager.format_action(action)
 
         if 'craft' in action:
             if \
@@ -249,6 +194,7 @@ def test_policy(writer, wrapped_env, policy, init_img, init_vec, episodes=100):
         done = False
         while not done:
             a_id = policy(img, vec)
+
             img, vec, r, done = wrapped_env.step(a_id)
 
             reward += r

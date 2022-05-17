@@ -170,16 +170,6 @@ class ActionManager:
         a['camera'] += np.random.normal(0., 0.5, 2)
         return a
 
-    def format_action(self, action):
-        output = {}
-        for k, v in action.items():
-            if k in self.separate_str_lists:
-                output[k] = self.separate_str_lists[k][v]
-            elif k != 'camera':
-                output[k] = np.array(v)
-
-        return output
-
     def print_action(self, id_):
         a = copy.deepcopy(self.action_list[int(id_)])
         out = ""
